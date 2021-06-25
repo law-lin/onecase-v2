@@ -1,5 +1,9 @@
 # OneCase v2
 
+This version of the project is not being maintained anymore and the code has been made public for anyone interested. This site is being hosted at https://onecase.app, feel free to make an account and give it a try. You can find my profile at https://onecase.app/lawrence.
+
+This is being hosted on a free Heroku dyno that sleeps when not being used, so give it a couple of seconds to load.
+
 ## Application Stack
 - TypeScript
 - Node.js
