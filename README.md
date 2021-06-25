@@ -6,11 +6,13 @@ We're currently working on our next iteration of OneCase with a mobile first app
 
 ## Application Stack
 - TypeScript
+- React
 - Node.js
 - PostgreSQL
 - GraphQL
 - Postgraphile
-- React
+- AWS RDS and S3
+
 
 ## Setting Up
 
