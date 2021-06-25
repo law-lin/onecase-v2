@@ -1,0 +1,27 @@
+{
+  "name": "onecase",
+  "version": "1.0.0",
+  "description": "1. `npx knex migrate:latest` to update the schema to the database.\r 2. `npx knex seed:run` to run all seed files.\r 3. `npm run start:dev` to start the server under `server/`.\r 4. `npm start` to start the client under `client/`.",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server/ && npm start",
+    "dev": "concurrently -kill-others \"cd client/ && npm start\" \"(cd server/ && npm run start:dev)\"",
+    "build:ui": "rm -rf build && cd client/ && npm run build --prod && cp -r build ../",
+    "heroku-postbuild": "cd server/ && npm i && npm run tsc",
+    "deploy": "git push heroku master",
+    "migrate": "cd server/ && npx knex migrate:latest --env production && npx knex seed:run --env production",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run migrate && npm run deploy",
+    "logs:prod": "heroku logs --tail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/law-lin/onecase.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/law-lin/onecase/issues"
+  },
+  "homepage": "https://github.com/law-lin/onecase#readme"
+}
